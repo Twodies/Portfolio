@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDown, Mail, Phone, Linkedin, Download } from 'lucide-react';
+import Image from 'next/image';
 import { personalInfo, socialLinks } from '@/data/portfolio-data';
 
 export default function Hero() {
@@ -72,11 +73,31 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 container-custom px-6 py-24">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Avatar */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse opacity-75" />
+              <Image
+                src="/avatar.jpg"
+                alt="Shahnur Daniyarov"
+                width={160}
+                height={160}
+                className="relative rounded-full border-4 border-white dark:border-gray-800 shadow-2xl object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+
           {/* Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-sm font-medium">
@@ -88,7 +109,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="heading-1 mb-6"
           >
             Hi, I'm{' '}
@@ -99,7 +120,7 @@ export default function Hero() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="heading-3 text-[var(--text-secondary)] mb-8"
           >
             {personalInfo.title}

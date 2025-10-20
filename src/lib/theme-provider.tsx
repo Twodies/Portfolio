@@ -24,6 +24,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     if (initialTheme === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
@@ -39,10 +41,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
+  // Always provide the context, even during SSR/initial render
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
