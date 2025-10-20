@@ -91,18 +91,27 @@ export default function Projects() {
               >
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="h-full rounded-xl bg-[var(--background-accent)] border border-[var(--border)] hover:border-[var(--accent)] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl"
+                  className="h-full rounded-2xl bg-[var(--background-accent)] border-2 border-[var(--border)] hover:border-[var(--accent)] overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm"
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  <div className="relative h-56 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 overflow-hidden flex items-center justify-center p-4">
+                    {project.image ? (
+                      <>
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={512}
+                          height={512}
+                          className="object-contain max-h-full w-auto group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                      </>
+                    ) : (
+                      <div className="text-6xl font-bold text-[var(--accent)]/20">
+                        {project.title.charAt(0)}
+                      </div>
+                    )}
                     {/* Platform badge */}
                     <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[var(--accent)] text-white text-xs font-medium">
                       {project.platform}
