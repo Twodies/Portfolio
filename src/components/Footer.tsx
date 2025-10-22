@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Heart, ArrowUp } from 'lucide-react';
+import { Mail, Phone, Linkedin, Heart, ArrowUp, Instagram, Send } from 'lucide-react';
 import { personalInfo, socialLinks } from '@/data/portfolio-data';
 
 const navLinks = [
@@ -37,6 +37,10 @@ export default function Footer() {
     switch (icon) {
       case 'linkedin':
         return <Linkedin className="w-5 h-5" />;
+      case 'instagram':
+        return <Instagram className="w-5 h-5" />;
+      case 'telegram':
+        return <Send className="w-5 h-5" />;
       case 'mail':
         return <Mail className="w-5 h-5" />;
       case 'phone':

@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'Shahnur Daniyarov - Mobile Application Developer',
   description:
     'Experienced Mobile Application Developer with 3+ years of expertise in native Android development. Specialized in building scalable, high-performance applications using modern architecture patterns.',
+  icons: {
+    icon: '/favicon.svg',
+  },
   keywords: [
     'Shahnur Daniyarov',
     'Android Developer',

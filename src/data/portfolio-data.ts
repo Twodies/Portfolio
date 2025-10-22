@@ -312,6 +312,16 @@ export const socialLinks: SocialLink[] = [
     icon: 'linkedin',
   },
   {
+    name: 'Instagram',
+    url: 'https://instagram.com/iamtwodies',
+    icon: 'instagram',
+  },
+  {
+    name: 'Telegram',
+    url: 'https://t.me/iamtwodies',
+    icon: 'telegram',
+  },
+  {
     name: 'Email',
     url: 'mailto:twodiesdeveloper@gmail.com',
     icon: 'mail',
@@ -332,10 +342,10 @@ export const personalInfo = {
         MVVM and Clean Architecture. Proven track record of delivering production-ready apps with millions of
         downloads, including real-time messaging platforms, media streaming services, and enterprise solutions.`,
   education: {
-    degree: 'Bachelor of Science',
+    degree: 'Master of Science',
     institution: 'Magtymguly Turkmen State University',
-    period: '2021 - 2025',
-    field: 'Science',
+    period: '2021 - 2026',
+    field: 'Chemistry',
   },
   stats: [
     { label: 'Years Experience', value: '3+' },

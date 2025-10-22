@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Mail, Phone, Linkedin, Download } from 'lucide-react';
+import { ArrowDown, Mail, Phone, Linkedin, Download, Instagram, Send } from 'lucide-react';
 import Image from 'next/image';
 import { personalInfo, socialLinks } from '@/data/portfolio-data';
 
@@ -25,6 +25,10 @@ export default function Hero() {
     switch (icon) {
       case 'linkedin':
         return <Linkedin className="w-5 h-5" />;
+      case 'instagram':
+        return <Instagram className="w-5 h-5" />;
+      case 'telegram':
+        return <Send className="w-5 h-5" />;
       case 'mail':
         return <Mail className="w-5 h-5" />;
       case 'phone':
@@ -153,7 +157,7 @@ export default function Hero() {
             </a>
             <a
               href="/resume.pdf"
-              download
+              download="resume.pdf"
               className="btn-secondary group"
             >
               Download CV
