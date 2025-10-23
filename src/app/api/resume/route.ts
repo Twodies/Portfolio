@@ -5,12 +5,16 @@ import path from 'path';
 export async function GET() {
   try {
     const filePath = path.join(process.cwd(), 'public', 'resume.pdf');
-    const data = await fs.readFile(filePath);
+    const file = await fs.readFile(filePath);
 
-    return new Response(data, {
+    // Convert Buffer to Uint8Array to satisfy DOM Blob typings
+    const uint8 = new Uint8Array(file);
+    const blob = new Blob([uint8], { type: 'application/pdf' });
+
+    return new Response(blob, {
       headers: {
         'Content-Type': 'application/pdf',
-'Content-Disposition': 'attachment; filename="resume.pdf"',
+        'Content-Disposition': 'attachment; filename="resume.pdf"',
         'Cache-Control': 'public, max-age=3600, immutable',
       },
     });
